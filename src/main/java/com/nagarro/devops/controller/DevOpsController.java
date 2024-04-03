@@ -14,9 +14,8 @@ public class DevOpsController {
 
 	@GetMapping
     public String getAllCustomers() {
-  
+
             return "DevOps Application is Running";
-    
 	
 	}
 }

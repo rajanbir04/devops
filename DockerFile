@@ -1,0 +1,11 @@
+FROM openjdk:11
+ 
+# Set the working directory.
+WORKDIR /usr/src/app
+ 
+# Copy the packaged JAR file from the build stage.
+COPY target/*.jar devops-spring-boot.jar
+ 
+EXPOSE 8182
+# Specify the command to run on container start.
+ENTRYPOINT ["java","-jar","devops-spring-boot.jar"]
