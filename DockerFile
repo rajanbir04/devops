@@ -11,7 +11,7 @@
 # ENTRYPOINT ["java","-jar","devops-spring-boot.jar"]
 
 # Use the official OpenJDK 11 image as the base image
-FROM adoptopenjdk/openjdk17:alpine
+FROM openjdk:17
 
 # Set the working directory inside the container
 WORKDIR /usr/src/app
