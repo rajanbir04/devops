@@ -1,11 +1,27 @@
-FROM openjdk:11
+# FROM openjdk:11
  
 # Set the working directory.
-WORKDIR /usr/src/app
+# WORKDIR /usr/src/app
  
 # Copy the packaged JAR file from the build stage.
-COPY target/*.jar devops-spring-boot.jar
+# COPY target/*.jar devops-spring-boot.jar
  
-EXPOSE 8080
+# EXPOSE 8080
 # Specify the command to run on container start.
-ENTRYPOINT ["java","-jar","devops-spring-boot.jar"]
+# ENTRYPOINT ["java","-jar","devops-spring-boot.jar"]
+
+# Use the official OpenJDK 11 image as the base image
+FROM openjdk:11
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy the packaged JAR file from the build stage into the container
+COPY target/*.jar devops-spring-boot.jar
+
+# Expose port 8182 to allow external access to the application
+EXPOSE 8182
+
+# Specify the command to run when the container starts
+ENTRYPOINT ["java", "-jar", "devops-spring-boot.jar"]
+
